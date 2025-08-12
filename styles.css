@@ -12,6 +12,10 @@ body {
     background: linear-gradient(135deg, #383838 0%, #2a2a2a 50%, #383838 100%);
     min-height: 100vh;
 
+    -webkit-user-select: none; 
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     
 }
 
@@ -770,4 +774,25 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(135deg, #737b6a, #383838);
+}
+
+#copy-warning {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #383838;
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#copy-warning.visible {
+    opacity: 1;
+    visibility: visible;
 }

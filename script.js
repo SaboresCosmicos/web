@@ -219,3 +219,27 @@ window.addEventListener('load', function() {
         document.body.style.opacity = '1';
     }, 100);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const copyWarning = document.getElementById('copy-warning');
+    let timeout;
+
+    function showWarning() {
+        copyWarning.classList.add('visible');
+
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+            copyWarning.classList.remove('visible');
+        }, 3000);
+    }
+
+    document.body.addEventListener('copy', (e) => {
+        e.preventDefault();
+        showWarning();
+    });
+
+    document.body.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+        showWarning();
+    });
+});
