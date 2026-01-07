@@ -13,20 +13,156 @@
             return false; 
         }
     </script>
+
+<style>
+/* Nav bar  "productos" section */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 100%; 
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #2a2a2a;
+    min-width: 220px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+    z-index: 1001;
+    border-radius: 8px;
+    padding: 10px 0;
+    border: 1px solid rgba(115, 123, 106, 0.3);
+    top: 100%; 
+    left: 0;
+    margin-top: 10px; 
+}
+
+.dropdown-content::before {
+    content: "";
+    position: absolute;
+    top: -20px; 
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent; 
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeInUp 0.3s ease-out;
+}
+
+.dropdown-content a {
+    color: #e0e0e0;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #383838;
+    color: #becdac;
+    padding-left: 25px;
+}
+
+.dropdown-category {
+   display: block; 
+    padding: 10px 20px 5px 20px;
+    font-size: 0.8rem;
+    color: #737b6a;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-decoration: none; 
+    transition: all 0.3s ease;
+    cursor: pointer;      
+    pointer-events: auto; 
+    display: block;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background-color: rgba(115, 123, 106, 0.3);
+    margin: 8px 0;
+}
+
+.dropdown-category:hover {
+    background-color: #383838;
+    color: #becdac;
+    padding-left: 25px;
+}
+
+@media (max-width: 768px) {
+    .dropdown { display: block; width: 100%; }
+    .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background: rgba(0,0,0,0.2);
+        width: 100%;
+        margin-top: 0;
+        border: none;
+    }
+    .dropdown:hover .dropdown-content { display: block; }
+    .dropbtn { justify-content: center; }
+    .dropdown-category { text-align: center; color: #becdac; }
+}
+
+#books {
+    scroll-margin-top: 120px; 
+}
+</style>
+
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="assets/logoHD.png" alt="Logo Sabores Cósmicos" class="logo-img" title="Sabores Cósmicos">
+      <nav class="navbar">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="index.html">
+                <img src="assets/logoHD.png" alt="Logo Sabores Cósmicos" class="logo-img">
+            </a>
+        </div>
+        
+        <div class="nav-menu" id="nav-menu">
+            <a href="index.html#home" class="nav-link">Inicio</a>
+            <a href="index.html#about" class="nav-link">Sobre Mí</a>
+            <a href="index.html#services" class="nav-link">Servicios</a>
+            
+            <div class="dropdown">
+                <a href="index.html#products" class="nav-link dropbtn">Productos ▾</a>
+                
+                <div class="dropdown-content">
+                    
+                    <a href="index.html#books" class="dropdown-category">Libros e E-books</a>
+                    
+                    <a href="saborescosmicos.html">Sabores Cósmicos</a>
+                    <a href="astrocooking.html">AstroCooking</a>
+                    <a href="combo-alimentacionconsciente.html">Combo Alimentación Consciente</a>
+                    
+                    <div class="dropdown-divider"></div>
+
+                    <a href="index.html#courses" class="dropdown-category">Cursos</a>
+                    
+                    <a href="index.html#combos" class="dropdown-category">Combos & más</a>
+                </div>
             </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Inicio</a>
-                <a href="#about" class="nav-link">Sobre Mí</a>
-                <a href="#products" class="nav-link">Productos</a>
-                <a href="#services" class="nav-link">Servicios</a>
-                <a href="#contact" class="nav-link">Contacto</a>
-            </div>
+            <a href="index.html#contact" class="nav-link">Contacto</a>
+        </div>
+        
+        <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
+</nav>
 
         <div class="nav-social-links">
                 <a href="https://www.instagram.com/saborescosmicos.mbb/" target="_blank" aria-label="Instagram">
@@ -56,7 +192,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="profile-image">
@@ -75,7 +211,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">Sobre Mí</h2>
@@ -115,7 +250,7 @@
     <div class="container">
         <h2 class="section-title">Productos</h2>
 
-        <h3 class="subsection-title">Libros e E-books</h3>
+        <h3 class="subsection-title" id="books">Libros e E-books</h3>
         <div class="products-grid">
             <div class="product-card">
                 <div class="product-image">
@@ -124,17 +259,18 @@
                 <div class="product-info">
                     <h3>Sabores Cósmicos</h3>
                     <p>Una guía completa para conectar con la alimentación consciente a través de la astrología.</p>
-                    <a class="btn btn-primary" href="https://wa.link/qu2549">Más Información </a>
+                    <a class="btn btn-primary" href="saborescosmicos.html">Más Información </a>
                 </div>
             </div>
             <div class="product-card">
                 <div class="product-image">
-                    <img src="assets/planneran.jpg" alt="Planner Anual Lunar" title="Planner ya disponible!">
+                    <img src="assets/combo.png" alt="Planner Anual Lunar" title="Planner ya disponible!">
                 </div>
                 <div class="product-info">
-                    <h3>Planner Anual Lunar</h3>
-                    <p>E-book imprimible para organizar tu vida en sintonía con las fases de la luna.</p>
-                    <a class="btn btn-primary" href="https://wa.link/2t56yj">Más Información</a>
+                    <h3>COMBO Alimentación Consciente </h3>
+                    <p>Un combo único para transformar tu alimentación y tu energía.
+                        conciencia, organización y cocina práctica para tu bienestar.</p>
+                    <a class="btn btn-primary" href="combo-alimentacionconsciente.html">Más Información</a>
                 </div>
             </div>
             <div class="product-card">
@@ -147,9 +283,19 @@
                     <a class="btn btn-primary" href="astrocooking.html">PRECOMPRAR</a> 
                 </div>
             </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="assets/planneran.jpg" alt="Planner Anual Lunar" title="Planner ya disponible!">
+                </div>
+                <div class="product-info">
+                    <h3>Planner Anual Lunar</h3>
+                    <p>E-book imprimible para organizar tu vida en sintonía con las fases de la luna.</p>
+                    <a class="btn btn-primary" href="https://wa.link/2t56yj">Más Información</a>
+                </div>
+            </div>
         </div>
 
-        <h3 class="subsection-title">Cursos</h3>
+        <h3 class="subsection-title" id="courses">Cursos</h3>
         <div class="products-grid">
             <div class="product-card">
                 <div class="product-image">
@@ -233,7 +379,7 @@
             </div>
         </div>
 
-        <h3 class="subsection-title">Combos & Más</h3>
+        <h3 class="subsection-title" id="combos">Combos & Más</h3>
         <div class="products-grid">
             <div class="product-card">
                 <div class="product-image">
@@ -271,7 +417,7 @@
 
 <section id="services" class="services">
     <div class="container">
-        <h2 class="section-title">Servicios</h2>
+        <h2 class="section-title" id="services">Servicios</h2>
         <h3 class="subsection-title">Sesiones 1:1</h3>
         <div class="services-grid">
             <div class="service-card">

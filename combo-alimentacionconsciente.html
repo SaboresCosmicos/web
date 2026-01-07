@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Recetario Astrocooking - Sabores Cósmicos">
-    <title>Astrocooking - Preventa | Sabores Cósmicos</title>
+    <meta name="description" content="Recetario Sabores Cosmicos - Sabores Cósmicos">
+    <title>COMBO Alimentación Consciente</title>
     
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/webp" href="assets/favicon.webp">
@@ -24,17 +24,16 @@
             
             grid-template-columns: 1fr 1fr;
             grid-template-areas: 
-                "imagen  info"
-                "faq     specs";
+            "imagen  info"
+            "faq     info"
+            "specs   info";
             align-items: start;
         }
-
 
         .area-imagen { grid-area: imagen; }
         .area-info   { grid-area: info; }
         .area-specs  { grid-area: specs; }
         .area-faq    { grid-area: faq; }
-
 
         .book-cover-container {
             position: relative;
@@ -53,7 +52,6 @@
         }
         .book-cover:hover { transform: scale(1.02); }
 
-        /* Info del Libro */
         .book-info h1 {
             font-family: 'Dancing Script', cursive;
             font-size: 3.5rem;
@@ -61,7 +59,7 @@
             margin-bottom: 0.5rem;
         }
         .author { color: #aaa; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 2rem; }
-        .price-tag { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; display: block; }
+        .price-tag { font-size: 2rem; font-weight: 700; color: #fff; margin-bottom: 2rem; display: block; }
         .description { text-align: justify; font-size: 1.1rem; line-height: 1.8; color: #ddd; margin-bottom: 2rem; }
         
         .btn-large {
@@ -130,6 +128,43 @@
             line-height: 1.6;
         }
 
+        .combo-price-container {
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column; 
+            gap: 5px;
+        }
+
+        .price-row-top {
+            display: flex;
+            align-items: center; 
+            gap: 15px; 
+        }
+
+        .old-price {
+            text-decoration: line-through; 
+            color: #888; 
+            font-size: 1.3rem;
+            font-weight: 400;
+        }
+
+        .discount-badge {
+            background-color: #d4af37; 
+            color: #1a1a1a;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .final-price {
+            font-size: 2.5rem; 
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.2;
+        }
+
         
         @media (max-width: 768px) {
             .product-container {
@@ -144,6 +179,23 @@
             }
             .book-info h1 { font-size: 2.5rem; }
         }
+.precio-ebook {
+    display: block;        
+    font-size: 1.2rem;      
+    color: #ffffff;          
+    font-weight: 500;        
+    margin-top: 1px;         
+    font-style: italic;      
+}
+
+
+.tag-ebook {
+    background-color: rgba(115, 123, 106, 0.1);
+    padding: 3px 7px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    margin-right: 5px;
+}
 
 /* Nav bar  "productos" section */
 .dropdown {
@@ -248,30 +300,13 @@
 #books {
     scroll-margin-top: 120px; 
 }
-
-.precio-ebook {
-    display: block;        
-    font-size: 1.2rem;      
-    color: #ffffff;          
-    font-weight: 500;        
-    margin-top: 1px;         
-    font-style: italic;      
-}
-
-
-.tag-ebook {
-    background-color: rgba(115, 123, 106, 0.1);
-    padding: 3px 7px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    margin-right: 5px;
-}
+        
     </style>
 
 </head>
 <body>
 
-   <nav class="navbar">
+<nav class="navbar">
     <div class="nav-container">
         <div class="nav-logo">
             <a href="index.html">
@@ -317,65 +352,82 @@
         
         <div class="area-imagen">
             <div class="book-cover-container">
-                <img src="assets/acooking.png" alt="Portada Astrocooking" class="book-cover">
+                <img src="assets/combo-thumb.png" alt="Portada Sabores Cosmicos" class="book-cover">
             </div>
         </div>
 
         <div class="area-info book-info">
-<h1>Recetario Astrocooking</h1>
+<h1>COMBO <br> Alimentación Consciente</h1>
             <p class="author">María Belén Bauló</p>
-
-<p class="price-tag">$28.000 ARS<span style="font-size: 0.8em; color: #888;"> (Físico)</span></p>
-<div class="precio-ebook">
-    <span class="tag-ebook">E-BOOK</span> $15.000 ARS
-</div>
+            <div class="combo-price-container">
+                <div class="price-row-top">
+                    <span class="old-price">$58.000 ARS</span>
+                    <span class="discount-badge">10% OFF</span>
+                </div>
+                <span class="final-price">$52.200 ARS</span>
+                <div class="precio-ebook">
+            <span class="tag-ebook">E-BOOK</span> $28.000 ARS
+        </div>
             <br>
-            <p class="description">
-                AstroCooking es un recetario pensado para quienes quieren comer saludable 
-                sin pasar horas en la cocina. Vas a encontrar todo lo necesario, ya que te acompaña desde la compra del super hasta
-                la preparación de tu comida.<br><br>
+            </div>
+            
+            <p class="description" >
+                Este combo reúne dos libros complementarios para acompañarte en un proceso real de transformación alimentaria: conciencia, 
+                organización y práctica.
 
-                En la primera parte, vas a encontrar herramientas concretas para optimizar tu cocina. Cómo conservar alimentos, cómo utilizar la heladera 
-                y el freezer, aparte de ganar tiempo con comida casera y mejorar la absorción de nutrientes fundamentales como el hierro y la vitamina B.<br><br>
+                Sabores Cósmicos es una guía que profundiza en la relación entre alimentación, energía vital, emociones y ciclos naturales. Te 
+                invita a expandir la conciencia sobre lo que comés, cómo lo comés y desde dónde elegís nutrirte, integrando saberes ancestrales 
+                y una mirada energética aplicada a la vida cotidiana.<br><br>
 
-                La segunda parte reúne 100 recetas trofológicas dulces y saladas, añadido a una selección de mis recetas preferidas. Platos pensados para 
-                el día a día, con combinaciones que facilitan la digestión, aumentan tu energía y simplifican tu alimentación sin renunciar a nada.<br><br>
+                AstroCooking es el recetario práctico que baja esa conciencia a la acción. Incluye herramientas para organizar tu cocina, 
+                conservar alimentos, optimizar tiempos y más de 100 recetas trofológicas —dulces y saladas— pensadas para el día a día, 
+                con combinaciones simples, nutritivas y accesibles.<br><br>
 
-                AstroCooking es ideal si buscás practicidad y una forma más equilibrada y  de alimentarte. Una herramienta para volver a disfrutar la cocina, 
-                comer con conciencia y sostener hábitos reales, posibles y duraderos.
-            </p>
+                Juntos, forman un recorrido completo: comprender, ordenar y cocinar con sentido. 
+                Un combo ideal si buscás mejorar tu alimentación de manera consciente, sostener hábitos posibles y transformar 
+                la cocina en un espacio de bienestar.
+            </p >
 
-            <a href="https://bit.ly/4j3k0Pp" class="btn btn-large">PRECOMPRAR AHORA</a>
+            <a href="https://wa.link/frdnr0" class="btn btn-large">Adquirir mi Ejemplar</a>
             <p style="text-align:center; font-size:0.8rem; margin-top:10px; color:#888;">
                 
             </p>
         </div>
 
         <div class="area-faq faq-container">
-            <h3>Preguntas Frecuentes</h3>
-            
-            <details>
-                <summary>¿En qué formato se entrega?</summary>
-                <div class="faq-content">
-                    El recetario se entrega en uno de dos formatos: En PDF, hecho para usarse cómodamente en cualquier dispositivo.
-                    En formato físico, para toda la argentina. Tapa full color, con un interior de papel obra de 75gr.
-                </div>
-            </details>
+<h3>Preguntas Frecuentes</h3>
 
-            <details>
-                <summary>¿Las recetas son para celíacos, veganos y vegetarianos?</summary>
-                <div class="faq-content">
-                    Sí, las recetas están adaptadas con opciones sin harina ni huevo, queso, carne, etc.
-                </div>
-            </details>
-             
-             <details>
-                <summary>¿Cuándo recibo el libro?</summary>
-                <div class="faq-content">
-                    Al ser una preventa, vas a recibir el libro en tu correo electrónico el día del lanzamiento oficial.
-                </div>
-            </details>
-        </div>
+<details>
+    <summary>¿En qué formato se entrega el combo?</summary>
+    <div class="faq-content">
+        El combo está disponible en formato digital (PDF, apto para cualquier dispositivo) y en formato físico para envíos dentro de Argentina.
+        Los libros físicos cuentan con tapa full color y papel interior obra de 75 g.
+    </div>
+</details>
+
+<details>
+    <summary>¿Necesito conocimientos previos?</summary>
+    <div class="faq-content">
+        No. Tanto Sabores Cósmicos como AstroCooking están pensados para aplicarse de manera simple y práctica, incluso si estás dando tus primeros pasos en alimentación consciente.
+    </div>
+</details>
+
+<details>
+    <summary>¿Qué incluye exactamente el Combo?</summary>
+    <div class="faq-content">
+        Incluye el libro Sabores Cósmicos, una guía de conciencia alimentaria y energética, y AstroCooking, un recetario con más de 100 recetas trofológicas
+        y herramientas para organizar tu cocina y optimizar tiempos.
+    </div>
+</details>
+
+<details>
+    <summary>¿Para quién es ideal este combo?</summary>
+    <div class="faq-content">
+        Es ideal para personas que buscan mejorar su alimentación, organizar su cocina y sostener hábitos conscientes y posibles,
+        integrando bienestar, practicidad y energía vital en su vida cotidiana.
+    </div>
+</details>
+
 
         <div class="area-specs specs-table">
             <div class="spec-row">
@@ -388,7 +440,7 @@
             </div>
             <div class="spec-row">
                 <span class="spec-label">Páginas</span>
-                <span class="spec-value">135</span>
+                <span class="spec-value">230 y 135</span>
             </div>
             <div class="spec-row">
                 <span class="spec-label">Lanzamiento</span>
@@ -405,8 +457,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Recetario Astrocooking - Sabores Cósmicos">
-    <title>Astrocooking PREVENTA</title>
+    <meta name="description" content="Recetario Sabores Cosmicos - Sabores Cósmicos">
+    <title>Sabores Cosmicos PREVENTA</title>
     
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/webp" href="assets/favicon.webp">
@@ -427,6 +479,8 @@
 
      
         .book-cover-container {
+                  
+            display: block;
             position: relative;
             border-radius: 15px;
             overflow: hidden;
@@ -434,13 +488,15 @@
             border: 1px solid rgba(255,255,255,0.1);
             max-width: 450px;
             margin: 0 auto;
+            aspect-ratio: 4 / 5;
         }
         
         .book-cover {
             width: 100%;
-            height: auto;
+            height: 100%; 
             display: block;
             transition: transform 0.3s ease;
+            object-fit: cover;
         }
         
         .book-cover:hover { transform: scale(1.02); }
@@ -465,7 +521,7 @@
             font-size: 2rem;
             font-weight: 700;
             color: #fff;
-            margin-bottom: 0.1rem;
+            margin-bottom: 0.5rem;
             display: block;
         }
 
@@ -610,23 +666,19 @@
             <div class="carousel-track" id="track">
                 
                 <div class="carousel-slide">
-                    <img src="assets/1.1.png" alt="Página interior 1">
+                    <img src="assets/sc2.png" alt="Página interior 1">
                 </div>
                 
                 <div class="carousel-slide">
-                    <img src="assets/1.2.png" alt="Página interior 2">
+                    <img src="assets/sc1.png" alt="Página interior 2">
                 </div>
                 
                 <div class="carousel-slide">
-                    <img src="assets/1.3.png" alt="Página interior 3">
+                    <img src="assets/1.1.png" alt="Página interior 3">
                 </div>
                 
                  <div class="carousel-slide">
-                    <img src="assets/1.4.png" alt="Página interior 4">
-                </div>
-
-                <div class="carousel-slide">
-                    <img src="assets/1.5.png" alt="Página interior 5">
+                    <img src="assets/1.3.png" alt="Página interior 4">
                 </div>
 
             </div>
